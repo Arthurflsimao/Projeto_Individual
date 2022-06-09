@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html class="no-js" lang="pt-br">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="x-ua-compatible" content="ie=edge" />
+		<title>CineViwes | Filmes</title>
+		<meta name="description" content="" />
+		<link rel="shortcut icon" type="image/png" href="/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="normalize.css" />
+		<link rel="stylesheet" href="main.css" />
+		<link rel="stylesheet" href="dashboards.css" />
+		<link rel="icon" href="https://www.emojiall.com/images/animations/joypixels/128px/popcorn.gif" />
+	</head>
+
+	<script src="../js/funcoes.js"></script>
+
+	<body onload="validarSessao(), atualizacaoPeriodica()">
+
+		<!-- Hero -->
+		<header class="hero_irlandes">
+			<!-- Hero Menu -->
+			<nav class="hero-menu">
+				<div class="container">
+					<a href="filmes.html" class="hero-logo">
+						<img src="https://www.emojiall.com/images/animations/joypixels/128px/popcorn.gif" alt="" />
+					</a>
+					<h1 class="cineviews">CineViews</h1>
+
+					<ul class="hero-lista">
+						<li class="hero-lista-item"><a href="filmes.html">Inicio</a></li>
+						<li class="hero-lista-item"><a href="cards.html">Cards</a></li>
+						<li class="hero-lista-item"><a href="mural.html">Ajuda</a></li>
+						<li class="hero-lista-item"><a href="dashboard.html">Votação</a></li>
+						<li class="hero-lista-item"><div class="btn-logout" onclick="limparSessao()">
+							<a href="">Sair</a></div></li>
+					</ul>
+					
+		
+
+
+					
+
+					<div class="hero-usuario">
+						<div class="hero-usuario-foto">
+							<a href="#"><img src="img/walter-white.jpg" alt="Walter White" /></a>
+						</div>
+
+						<div class="hero-usuario-nome">
+							<div class="hello">
+								<h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+			</nav>
+
+			<!-- Hero Movie -->
+			<div class="hero-conteudo">
+				<div class="container">
+					<h2 class="hero-titulo">O Irlandês</h2>
+
+					<p class="hero-genero">
+						<a href="#" class="hero-genero-item">Drama</a>
+						<a href="#" class="hero-genero-item">Crime</a>
+					</p>
+				</div>
+			</div>
+		</header>
+
+		<!-- Movies Menu -->
+		<section class="catalogo">
+			<nav class="catalogo-menu">
+				<div class="container">
+				</div>
+			</nav>
+
+			<!-- movies cards -->
+			<div class="container">
+				<ul class="catalogo-filmes-lista">
+					<li class="catalogo-filmes-lista-item">
+						<figure class="filme-poster">
+							<img src="https://joesdaily.com/wp-content/uploads/2020/01/Tony-Stella-Ian-Keltie-The-Irishman-Posters-6.jpg" />
+							<div class="filme-poster-info">
+								<h3>O Irlandês</h3>
+								<a href="https://www.youtube.com/watch?v=WHXxVmeGQUc" target="_blank" class="filme-poster-link"><i class="fa fa-play" aria-hidden="true"></i></a>
+							</div>
+						</figure>
+
+						<div class="filme-sinopse">
+							<h3 class="filme-sinopse-titulo"><a  href="dashboard.html">O Irlandês</a></h3>
+							<p class="sinopse-genero">
+								<a href="#" class="sinopse-genero-item">Drama,</a>
+								<a href="#" class="sinopse-genero-item">Crime</a>
+							</p>
+							<p class="filme-nota">
+								<i class="fa fa-heart" aria-hidden="true"></i> 95%
+							</p>
+						</div>
+					</li>
+                    <br>
+                   
+					
+					<div class="dash-right">
+                    <div class="avisos">
+                        <div class="container">
+                            <div class="div-form">
+                                <form id="form_postagem" method="post" onsubmit="return publicar()">
+                                    <label>
+                                        <h1 class="Numero1">Atuação</h1>
+                                       
+                                        <input name="titulo" id="in_titulo1" maxlength="150" width="20vh" type="text">
+                                    </label>
+                                   
+									<h1 class="numero2">Efeitos Visuais</h1>
+									
+									<input name="titulo" id="in_titulo2" maxlength="150" width="20vh" type="text">
+                                    
+									<h1 class="numero3">Direção de Arte</h1>
+								
+									<input name="titulo" id="in_titulo3" maxlength="150" width="20vh" type="text">
+									
+									<h1 class="numero4">Ambientação</h1>
+									<br>
+									<input name="titulo" id="in_titulo4" maxlength="150" width="20vh" type="text">
+								
+									<h1 class="numero5">Edição</h1>
+									
+									<input name="titulo" id="in_titulo5" maxlength="150" width="20vh" type="text">
+									
+									<h1 class="numero6">Figurino</h1>
+									
+									<input name="titulo" id="in_titulo6" maxlength="150" width="20vh" type="text">
+									
+									<h1 class="numero7">Fotografia</h1>
+									
+									<input name="titulo" id="in_titulo7" maxlength="150" width="20vh" type="text">
+									
+									<h1 class="numero8">Trilha Sonora</h1>
+									
+									<input name="titulo" id="in_titulo8" maxlength="150" width="20vh" type="text">
+									
+									<h1 class="numero9">Roteiro</h1>
+									
+									<input name="titulo" id="in_titulo9" maxlength="150" width="20vh" type="text">
+									
+									<h1 class="numero10">Direção</h1>
+									
+									<input name="titulo" id="in_titulo10" maxlength="150" width="20vh" type="text">
+									<br>
+                                    <button class="bonito" onclick="calculo()">Calcular</button>
+									<br>
+                                </form>
+                            </div>
+                        </div>
+
+                   
+                </ul>
+            </div>
+        </section>
+</body>
+</html>
+<script>
+	function calculo() {
+	alert(`A média geral deste filme ficou ${(Number(in_titulo1.value) + Number(in_titulo2.value) + Number(in_titulo3.value)
+		+ Number(in_titulo4.value) + Number(in_titulo5.value) + Number(in_titulo6.value) +
+		Number(in_titulo7.value) + Number(in_titulo8.value) + Number(in_titulo9.value) +
+		Number(in_titulo10.value)) / 10}`)
+	}
+</script>
+

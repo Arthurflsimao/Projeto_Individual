@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="icon" href="https://www.emojiall.com/images/animations/joypixels/128px/popcorn.gif" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AcquaTec | Tempo Real</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="dashboards.css">
+
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body onload="validarSessao(), atualizacaoPeriodica()">
+
+    <div class="janela">
+
+
+        <div class="header-left dash-header">
+
+            <h1>AcquaTec</h1>
+
+            <div class="hello">
+                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+            </div>
+
+            <div class="filmes_tabela">
+                <a href="filmes.html">
+                    <h3>Filmes</h3>
+                </a>
+            </div>
+
+
+            <div class="filmes_tabela">
+                <a href="dashboard.html">
+                    <h3>Ir para a Votação</h3>
+                </a>
+            </div>
+
+            <div class="btn-logout" onclick="limparSessao()">
+                <h3>Sair</h3>
+            </div>
+
+        </div>
+
+        <div class="dash">
+            <div class="regua">
+                <div class="cards">
+                    <div class="card">
+                        <h1>Batman</h1>
+                        <div class="quantidade">
+                            <img class="imgcards" style="width:200px; height: 180px;" src="../dashboard/img/Batman.jpeg">
+                            <p></p>
+                        </div>
+                    </div>
+                     <br>
+                    <div class="card">
+                        <h1>Pulp Fiction</h1>
+                        <div class="quantidade">
+                            <img class="imgcards" style='width:200px; height: 180px;' src="../dashboard/img/Pulp Fiction.jpg">
+                            <p></p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h1>Guerra Civil</h1>
+                        <div class="quantidade">
+                            <img class="imgcards" style='width:200px; height: 180px;' src="../dashboard/img/poster-guerra-civil.jpg">
+                            <p></p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h1>Mad Max</h1>
+                        <div class="quantidade">
+                            <img class="imgcards" style='width:200px; height: 180px;' src="../dashboard/img/poster-mad-max.jpg">
+                            <p></p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h1>Clube de Luta</h1>
+                        <div class="quantidade">
+                            <img class="imgcards" style='width:200px; height: 180px;' src="../dashboard/img/Fight Club.jpg">
+                            <p></p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h1>O Irlandês</h1>
+                        <div class="quantidade">
+                            <img class="imgcards" style='width:200px; height: 180px;' src="../dashboard/img/The Irishman.jpg">
+                            <p></p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+</body>
+
+<script>
+
+  //  function atualizacaoPeriodica() {
+  //      obterdados(1);
+  //    obterdados(2);
+  //      obterdados(3);
+  //      obterdados(4);
+ 
+  //     function sendData() {
+//			var http = new XMLHttpRequest();
+//			http.open('POST', 'http://localhost:3000/api/sendData', false);
+//			http.send(null);
+//		}
+
+  //      setInterval(() => {
+	//		sendData();
+	//	}, 2000);
+  //      setTimeout(atualizacaoPeriodica, 5000);
+  //  }
+
+  //  function obterdados(idAquario) {
+   //     fetch(`/medidas/tempo-real/${idAquario}`)
+   //         .then(resposta => {
+
+     //           if (resposta.ok) {
+      //              resposta.json().then(resposta => {
+
+      //                  console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+        //                var dados = {
+        //                    temperatura: resposta[0].temperatura,
+         //               }
+
+        //                alertar(resposta[0].temperatura, idAquario);
+         //           });
+       //         } else {
+
+        //            console.error('Nenhum dado encontrado ou erro na API');
+     //           }
+     //       })
+     //       .catch(function (error) {
+        //        console.error(`Erro na obtenção dos dados do aquario p/ gráfico: ${error.message}`);
+        //    });
+
+  //  }
+
+    function alertar(quantidade, idCinema) {
+        var limites = {
+            batman: 1,
+            pulpfiction: 2,
+            guerracivil: 3,
+            madmax: 4,
+            clubedaluta: 5,
+            irlandes: 6
+        };
+
+        var classe_quantidade = 'cor-alerta';
+
+        if (quantidade >= limites.batman) {
+            classe_temperatura = 'cor-alerta batman';
+            console.log("caiu no 1")
+        }
+        else if (temperatura <= limites.pulpfiction) {
+            classe_temperatura = 'cor-alerta pulpfiction';
+            console.log("caiu no 2")
+        }
+        else if (temperatura > limites.guerracivil) {
+            classe_temperatura = 'cor-alerta guerracivil';
+            console.log("caiu no 3")
+        }
+        else if (temperatura <= limites.madmax) {
+            classe_temperatura = 'cor-alerta madmax';
+            console.log("caiu no 4")
+        }
+        else if (temperatura < limites.clubedaluta) {
+            classe_temperatura = 'cor-alerta clubedaluta';
+            console.log("caiu no 5")
+        }
+        else if (temperatura <= limites.irlandes) {
+            classe_temperatura = 'cor-alerta irlandes';
+            console.log("caiu no 6")
+        }
+
+
+        var card;
+
+        if (idCinema == 1) {
+            cinema_1.innerHTML = quantidade + "°C";
+            card = card_1
+        } else if (idCinema == 2) {
+            cinema_2.innerHTML = quantidade + "°C";
+            card = card_2
+        } else if (idCinema == 3) {
+            cinema_3.innerHTML = quantidade + "°C";
+            card = card_3
+        } else if (idCinema == 4) {
+            cinema_4.innerHTML = quantidade + "°C";
+            card = card_4
+        } else if (idCinema == 5) {
+            cinema_5.innerHTML = quantidade + "°C";
+            card = card_5
+        } else if (idCinema == 6) {
+            cinema_6.innerHTML = quantidade + "°C";
+            card = card_6
+        }
+
+        // alterando
+        card.className = classe_quantidade;
+
+    }
+
+</script>
+
+</html>

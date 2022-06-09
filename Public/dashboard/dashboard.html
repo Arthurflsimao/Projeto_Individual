@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="shortcut icon" href="https://www.emojiall.com/images/animations/joypixels/128px/popcorn.gif" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cineviews | Votação</title>
+
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="dashboards.css">
+    <script src="../js/funcoes.js"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- scripts do Chart.js -->
+    <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
+
+</head>
+
+<body onload="validarSessao(), atualizarFeed()">
+    <!-- <body onload="validarSessao()"> -->
+
+    <div class="janela">
+        <div class="header-left">
+            <div class="braba">
+                <h1 class="titulo">CineViews</h1>
+
+            <div class="hello">
+                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="./cards.html">
+                    <h3>Cards dos Filmes</h3>
+                </a>
+            </div>
+
+            <div class="btn-nav">
+
+                <h3>Votação</h3>
+
+            </div>
+
+
+            <div class="btn-nav-white">
+                <a href="./mural.html">
+                    <h3>Ajuda</h3>
+                </a>
+            </div>
+
+            <div class="btn-logout" onclick="limparSessao()">
+                <h3>Sair</h3>
+            </div>
+
+        </div>
+                                   
+ <!--https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQt8yNufq2Jp9-D4BrCYYW5Y_jm8HXRE6NDczXQbTjV-5DMBS4o-->
+        </div>                     <!--https://m.media-amazon.com/images/I/91qzsEyFlML._AC_SL1500_.jpg-->  <!--img/poster-mad-max.jpg-->  <!--https://joesdaily.com/wp-content/uploads/2020/01/Tony-Stella-Ian-Keltie-The-Irishman-Posters-6.jpg-->
+                                   <!--https://m.media-amazon.com/images/I/71TlZNAe05L._AC_SY679_.jpg"-->
+        <div class="border"></div>
+
+        <div class="dash">
+            <div class="btns-dash">
+                <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
+                <button class="btn-chart1" onclick="votar(1)"><img class="imgRegua" src="img/Batman.jpeg"></button>
+                <button class="btn-chart2" onclick="votar(2)"><img class="imgRegua" src="img/Pulp Fiction.jpg"></button>
+                <button class="btn-chart3" onclick="votar(3)"><img class="imgRegua" src="img/poster-civil-war.jpg"></button>
+                <button class="btn-chart4" onclick="votar(4)"><img class="imgRegua" src="img/poster-mad-max.jpg"></button>
+                <button class="btn-chart5" onclick="votar(5)"><img class="imgRegua" src="https://m.media-amazon.com/images/I/71TlZNAe05L._AC_SY679_.jpg"></button>
+                <button class="btn-chart6" onclick="votar(6)"><img class="imgRegua" src="img/The Irishman.jpg"></button>
+            </div>
+            <div class="graph">
+                <canvas id="canvas_grafico" style="width: 10px;"></canvas></canvas>
+                
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    let proximaAtualizacao;
+
+    window.onload = obterDadosGrafico(1);
+
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+    //verificar_autenticacao();
+
+    // altere aqui como os dados serão exibidos
+    // e como são recuperados do BackEnd
+    function votar(idCinema) {
+       // if (proximaAtualizacao != undefined)
+         //   clearTimeout(proximaAtualizacao);
+       
+         console.log('entrei na função votar');
+
+        fetch(`/medidas/votar/${idCinema}`, { cache: 'no-store' }).then(function (response) {
+
+              console.log('entrei no fetch');
+
+            if (response.ok) {
+                window.alert("Excelente, você acabou de votar!", window.location.reload())
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+
+                    plotarGrafico(resposta, idCinema);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+
+        }
+
+
+
+        function obterDadosGrafico(idCinema) {
+
+
+            fetch(`/medidas/ultimas/${idCinema}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+
+                    plotarGrafico(resposta, idCinema);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+
+    }
+    
+
+    // só altere aqui se souber o que está fazendo!
+    function plotarGrafico(resposta, idCinema) {
+        console.log('iniciando plotagem do gráfico...');
+
+        var dados = {
+            labels: [],
+            datasets: [
+               // {
+                //   yAxisID: 'y-filme1',
+                //    label: 'Filme1',
+              //     borderColor: '#32B9CD',
+              //      backgroundColor: '#32b9cd8f',
+               //    fill: true,
+               //     data: []
+             //   },
+                {
+                    yAxisID: 'y-id',
+                    label: 'Favoritos',
+                    backgroundColor: ['#32b9cd8f', '#fdfa53', '#e63121', '#a024d3', '#4b84d3', '#0a05a3'],
+                    fill: true,
+                    data: []
+                }
+            ]
+        };
+
+        for (i = resposta.length -1; i >= 0; i--) {
+            var registro = resposta[i];
+            dados.labels.push(registro.nome);
+            dados.datasets[0].data.push(registro.id);
+           // dados.datasets[1].data.push(registro.filme2);
+        }
+
+        console.log(JSON.stringify(dados));
+
+        var ctx = canvas_grafico.getContext('2d');
+        window.grafico_linha = Chart.Bar(ctx, {
+            data: dados,
+            //Configurações do gráfico
+            options: {
+                responsive: true,
+                animation: { duration: 2000 },
+                hoverMode: 'index',
+                stacked: true,
+                title: {
+                    display: true,
+                    text: 'Votos Adquiridos'
+                },
+                scales: {
+                    yAxes: [{
+                        type: 'linear',
+                        display: true,
+                        position: 'left',
+                        id: 'y-id',
+                        ticks: {
+                            beginAtZero: true,
+                           // max: 100,
+                            min: 0
+                        },
+
+                        gridLines: {
+                            drawOnChartArea: true,
+                        }
+                     }],
+                }
+            }
+        });
+
+
+        var dados2 = {
+            labels: [],
+            datasets: [
+                {
+                    yAxisID: 'y-porcentagem',
+                    backgroundColor:['#32b242', '#fdfa53', '#e63121', '#a024d3', '#4b84d3', '#0a05a3'],
+                    data: []
+                }
+            ]
+        };
+
+        for (i2 = resposta.lenght -1; i2 >= 0; i2--) {
+            var registro2 = resposta[i2];
+            dados2.labels.push(registro2.nome);
+            dados2.datasets[0].data.push(registro2.porcentagem);
+        }
+
+        console.log(JSON.stringify(dados2));
+
+        var ctx2 = canvas_grafico2.getContext('2d');
+        window.grafico_linha2 = Chart.Doughnut(ctx2, {
+            data: dados2, 
+
+            options: {
+                responsive: true,
+                animation: {duration: 2000},
+                hoverMode: 'index',
+                stacked: true,
+                title: {
+                    display: true,
+                    text: 'Porcentagem de Votos'
+                },
+                scales: {
+                    yAxes: [{
+                        type: 'line',
+                        display: true,
+                        position: 'left',
+                        id: 'y-porcentagem',
+                        ticks: {
+                            beginAtZero: true,
+                            min: 0
+                        }
+                    }]
+                }
+            }
+        });
+
+        window.grafico_linha.update();
+                    window.grafico_linha2.update();
+  //      function sendData() {
+	//		var http = new XMLHttpRequest();
+	//		http.open('POST', 'http://localhost:3000/api/sendData', false);
+	//		http.send(null);
+	//	}
+
+    //    setInterval(() => {
+	//		sendData();
+	//	}, 2000);
+
+        //Atualiza os dados de 5 em 5 segundos
+    //    setTimeout(() => atualizarGrafico(idAquario, dados), 2000);
+    }
+
+    // só mexer se quiser alterar o tempo de atualização
+    // ou se souber o que está fazendo!
+    function atualizarGrafico(idCinema, dados, dados2) {
+
+        fetch(`/medidas/tempo-real/${idCinema}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (novoRegistro) {
+
+                    console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+                    console.log(`Dados atuais do gráfico: ${dados}`);
+                    console.log(`Dados atuais do gráfico: ${dados2}`);
+
+                    // tirando e colocando valores no gráfico
+                 //   dados.labels.shift(); // apagar o primeiro
+                 //   dados.labels.push(novoRegistro[0].momento_grafico); // incluir um novo momento
+                 //   dados.datasets[0].data.shift();  // apagar o primeiro de umidade
+                 //   dados.datasets[0].data.push(novoRegistro[0].filme1); // incluir uma nova medida de umidade
+                 //   dados.datasets[1].data.shift();  // apagar o primeiro de umidade
+                 //   dados.datasets[1].data.push(novoRegistro[0].filme2); // incluir uma nova medida de umidade
+
+                    window.grafico_linha.update();
+                    window.grafico_linha2.update();
+
+
+                    proximaAtualizacao = atualizarGrafico(idCinema, dados, dados2);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+                proximaAtualizacao = atualizarGrafico(idCinema, dados, dados2);
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+
+    }
+</script>
