@@ -24,7 +24,7 @@ Hero
 */
 .hero {
 	background-attachment: fixed;
-	background-image: url(img/capa-madmax2.jpg);
+	background-image: url(https://f.vividscreen.info/soft/781923768173c890206d7ac11d1b4163/Mad-Max-Fury-Road-1920x1080.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	display: flex;
@@ -67,7 +67,155 @@ Hero
 }
 
 .cineviews {
-	margin-left: -370px;
+	margin-left: -500px;
+	font-size: 37px;
+	color: red;
+}
+
+.cineviewsblade {
+	margin-left: -420px;
+	font-size: 37px;
+	color: red;
+}
+
+.cineviewsirlandes {
+	margin-left: -420px;
+	font-size: 37px;
+	color: red;
+}
+
+.cineviewsmadmax {
+	margin-left: -420px;
+	font-size: 37px;
+	color: red;
+}
+
+.cineviewsalita {
+	margin-left: -420px;
+	font-size: 37px;
+	color: red;
+}
+
+.cineviewsBvS {
+	margin-left: -420px;
+	font-size: 37px;
+	color: red;
+}
+
+.cineviewsjurassic {
+	margin-left: -420px;
+	font-size: 37px;
+	color: red;
+}
+
+.cineviewsguerracivil {
+	margin-left: -420px;
+	font-size: 37px;
+	color: red;
+}
+
+.cineviewsmarvel {
+	margin-left: -420px;
+	font-size: 37px;
+	color: red;
+}
+
+.cineviewscoringa {
+	margin-left: -420px;
+	font-size: 37px;
+	color: red;
+}
+
+.cineviewsJL {
+	margin-left: -420px;
+	font-size: 37px;
+	color: red;
+}
+
+
+.cineviewsSW {
+	margin-left: -420px;
+	font-size: 37px;
+	color: red;
+}
+
+
+.cineviewsPantera {
+	margin-left: -420px;
+	font-size: 37px;
+	color: red;
+}
+
+
+.cineviewsEsquadrao {
+	margin-left: -420px;
+	font-size: 37px;
+	color: red;
+}
+
+.cineviewsPoderoso {
+	margin-left: -420px;
+	font-size: 37px;
+	color: red;
+}
+
+.cineviewsJack {
+	margin-left: -420px;
+	font-size: 37px;
+	color: red;
+}
+
+.cineviews1917 {
+	margin-left: -420px;
+	font-size: 37px;
+	color: red;
+}
+
+
+.cineviewsBatman {
+	margin-left: -420px;
+	font-size: 37px;
+	color: red;
+}
+
+.cineviewsSchindler {
+	margin-left: -420px;
+	font-size: 37px;
+	color: red;
+}
+
+.cineviewsPulp {
+	margin-left: -420px;
+	font-size: 37px;
+	color: red;
+}
+
+.cineviews2001 {
+	margin-left: -420px;
+	font-size: 37px;
+	color: red;
+}
+
+.cineviewsvovo {
+	margin-left: -420px;
+	font-size: 37px;
+	color: red;
+}
+
+.cineviewsdavis {
+	margin-left: -420px;
+	font-size: 37px;
+	color: red;
+}
+
+.cineviewsluta {
+	margin-left: -420px;
+	font-size: 37px;
+	color: red;
+}
+
+.cineviewssangue {
+	margin-left: -420px;
 	font-size: 37px;
 	color: red;
 }
@@ -302,7 +450,7 @@ onHover Effect poster play
 onHover Title Effect
 */
 .filme-poster-info h3 {
-	color: #e4bb23;
+	color: #db1d1d;
 	font-size: 2em;
 	line-height: 1em;
 	text-transform: uppercase;
@@ -315,7 +463,7 @@ onHover Title Effect
 }
 
 .filme-poster-link:hover {
-	color: #e4bb23;
+	color: #e42323;
 }
 
 .filme-sinopse {
@@ -490,7 +638,7 @@ Footer Icons
 
 .hero_alita {
 	background-attachment: fixed;
-	background-image: url(https://wallpaperaccess.com/full/957240.jpg);
+	background-image: url(https://wallpapercave.com/wp/wp3985090.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	display: flex;
@@ -518,7 +666,7 @@ Footer Icons
 
 .hero_BvS {
 	background-attachment: fixed;
-	background-image: url(https://wallpaperaccess.com/full/957240.jpg);
+	background-image: url(https://i.pinimg.com/originals/a4/b8/dc/a4b8dc3b4aa6bdf1bec0d5d74390d9bf.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	display: flex;
@@ -546,7 +694,7 @@ Footer Icons
 
 .hero_jurassic {
 	background-attachment: fixed;
-	background-image: url(https://wallpaperaccess.com/full/957240.jpg);
+	background-image: url(https://images7.alphacoders.com/915/thumb-1920-915515.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	display: flex;
@@ -574,7 +722,7 @@ Footer Icons
 
 .hero_guerracivil {
 	background-attachment: fixed;
-	background-image: url(https://wallpaperaccess.com/full/957240.jpg);
+	background-image: url(https://images2.alphacoders.com/696/696684.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	display: flex;
@@ -602,7 +750,7 @@ Footer Icons
 
 .hero_marvel {
 	background-attachment: fixed;
-	background-image: url(https://wallpaperaccess.com/full/957240.jpg);
+	background-image: url(https://wallpaperaccess.com/full/1103410.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	display: flex;
@@ -630,7 +778,7 @@ Footer Icons
 
 .hero_coringa {
 	background-attachment: fixed;
-	background-image: url(https://wallpaperaccess.com/full/957240.jpg);
+	background-image: url(https://wallpapershome.com/images/wallpapers/joker-3840x2160-joaquin-phoenix-poster-4k-22155.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	display: flex;
@@ -658,7 +806,7 @@ Footer Icons
 
 .hero_JL {
 	background-attachment: fixed;
-	background-image: url(https://wallpaperaccess.com/full/957240.jpg);
+	background-image: url(https://images5.alphacoders.com/721/thumb-1920-721135.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	display: flex;
@@ -686,7 +834,7 @@ Footer Icons
 
 .hero_starwars {
 	background-attachment: fixed;
-	background-image: url(https://wallpaperaccess.com/full/957240.jpg);
+	background-image: url(https://i.pinimg.com/originals/60/c2/17/60c2177448cbf90408ed1df7da78cf00.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	display: flex;
@@ -714,7 +862,7 @@ Footer Icons
 
 .hero_pantera {
 	background-attachment: fixed;
-	background-image: url(https://wallpaperaccess.com/full/957240.jpg);
+	background-image: url(https://4kwallpapers.com/images/wallpapers/black-panther-minimal-art-black-background-3840x2160-2762.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 	display: flex;
@@ -742,7 +890,7 @@ Footer Icons
 
 .hero_esquadrao {
 	background-attachment: fixed;
-	background-image: url(https://wallpaperaccess.com/full/957240.jpg);
+	background-image: url(https://images4.alphacoders.com/115/1156313.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	display: flex;
@@ -771,7 +919,7 @@ Footer Icons
 
 .hero_poderoso {
 	background-attachment: fixed;
-	background-image: url(https://wallpaperaccess.com/full/957240.jpg);
+	background-image: url(https://images4.alphacoders.com/217/217234.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	display: flex;
@@ -796,10 +944,10 @@ Footer Icons
 	top: 0;
 	width: 100%;
 }
-
+ /*https://images6.alphacoders.com/339/339511.jpg*/
 .hero_jack {
 	background-attachment: fixed;
-	background-image: url(https://wallpaperaccess.com/full/957240.jpg);
+	background-image: url(https://wallpapercave.com/wp/4DnMAS4.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 	display: flex;
@@ -827,7 +975,7 @@ Footer Icons
 
 .hero_1917 {
 	background-attachment: fixed;
-	background-image: url(https://wallpaperaccess.com/full/957240.jpg);
+	background-image: url(https://images.hdqwalls.com/download/1917-movie-4k-ic-1440x900.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	display: flex;
@@ -857,7 +1005,7 @@ Footer Icons
 
 .hero_batman {
 	background-attachment: fixed;
-	background-image: url(https://wallpaperaccess.com/full/957240.jpg);
+	background-image: url(https://images3.alphacoders.com/118/thumb-1920-1185634.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	display: flex;
@@ -882,10 +1030,10 @@ Footer Icons
 	top: 0;
 	width: 100%;
 }
-
+/* https://cutewallpaper.org/21/schindlers-list-wallpapers/LAB-Classics-Schindlers-List-25th-anniversary-LAB111.jpg */
 .hero_schindler {
 	background-attachment: fixed;
-	background-image: url(https://wallpaperaccess.com/full/957240.jpg);
+	background-image: url(https://images4.alphacoders.com/700/700413.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	display: flex;
@@ -913,7 +1061,7 @@ Footer Icons
 
 .hero_pulp {
 	background-attachment: fixed;
-	background-image: url(https://wallpaperaccess.com/full/957240.jpg);
+	background-image: url(https://images5.alphacoders.com/489/489934.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 	display: flex;
@@ -942,7 +1090,7 @@ Footer Icons
 
 .hero_2001 {
 	background-attachment: fixed;
-	background-image: url(https://wallpaperaccess.com/full/957240.jpg);
+	background-image: url(https://wallpaperaccess.com/full/1647999.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 	display: flex;
@@ -970,7 +1118,7 @@ Footer Icons
 
 .hero_vovo {
 	background-attachment: fixed;
-	background-image: url(https://wallpaperaccess.com/full/957240.jpg);
+	background-image: url(https://wallpapercave.com/wp/wp9244497.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	display: flex;
@@ -999,7 +1147,7 @@ Footer Icons
 
 .hero_davis {
 	background-attachment: fixed;
-	background-image: url(https://wallpaperaccess.com/full/957240.jpg);
+	background-image: url(https://images7.alphacoders.com/644/thumb-1920-644924.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	display: flex;
@@ -1028,7 +1176,7 @@ Footer Icons
 
 .hero_luta {
 	background-attachment: fixed;
-	background-image: url(https://wallpaperaccess.com/full/957240.jpg);
+	background-image: url(https://images.alphacoders.com/204/204781.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	display: flex;
@@ -1057,7 +1205,7 @@ Footer Icons
 
 .hero_sangue {
 	background-attachment: fixed;
-	background-image: url(https://wallpaperaccess.com/full/957240.jpg);
+	background-image: url(https://wallpaperaccess.com/full/2325447.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	display: flex;

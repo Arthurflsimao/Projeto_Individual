@@ -291,7 +291,6 @@ body {
     width: 127px;
     border: 0;
     justify-content: center;
-    background-color: red;
     margin: 7px;
 }
 
@@ -342,7 +341,6 @@ body {
     width: 127px;
     border: 0;
     justify-content: center;
-    background-color: blue;
     margin: 7px;
 }
 
@@ -383,3 +381,4 @@ body {
   margin-left: 22vh;
   height: 6vh;
 }
+

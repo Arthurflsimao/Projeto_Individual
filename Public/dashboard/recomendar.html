@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+	<html lang="en">
+	<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CineViews | Recomendar Filme</title>
+    <link rel="stylesheet" href="../style.css">
+	</head>
+	<body>
+
+        <div class="btn-logout" onclick="limparSessao()">
+        <h3><a href="filmes.html">Inicio</a></h3><br>
+        </div>
+        
+	<div class="avisos">
+    <center><h2>Selecione um número de 1 a 240 para ser recomendado um filme</h2></center>
+    <div class="container">
+    <div class="div-form">
+    <div class="recomendacao">
+	 <input id="in_numero" type="number" placeholder="Digite um número"><br>
+	 <center><button class="btn2" onclick="cadastrar()">Cadastrar</button><br></center>
+	 <center><button class="btn2" onclick="analisar()">Analisar</button></center>
+    </div>
+    </div>
+    </div>
+    </div>
+	
+	<center><div id="resultado"></div></center>
+	</body>
+	</html>
+	<script>
+	const filmes = [];
+	
+	function cadastrar () {
+	
+	// const nome = in_nome_pais.value;
+	// const populacao = in_populacao.value;
+	const numero = in_numero.value; 
+	
+	if ((numero  <= -1 || numero > 241)) {
+	
+	return alert("Valores inválidos!");
+	}
+	
+	const filme = {
+	
+	numero: numero
+	}
+	
+	filmes.push(filme);
+	alert(`Filme ${filme.numero} cadastrado`);
+	in_numero.value = "";
+	
+	}
+	
+	
+	
+	function analisar () {
+	
+	const filme_info = {
+	nome_filme: "",
+	rotten: "",
+	imdb: 0,
+	foto_link: ""
+	}
+	
+	resultado.innerHTML = ""
+	
+	
+	for (let i = 0; i < filmes.length; i++) {
+	
+	if (filmes[i].numero >= 0 && filmes[i].numero <= 10) {
+	
+	filme_info.nome_filme = "Blade Runner";
+	filme_info.rotten = '88%';
+	filme_info.imdb = 8.0;
+	filme_info.foto_link = "https://m.media-amazon.com/images/I/71NPmBOdq7L._AC_SL1333_.jpg";
+	
+	}
+	
+	else if (filmes[i].numero >= 11 && filmes[i].numero <= 20) {
+	
+	filme_info.nome_filme = "Alita"
+	filme_info.rotten = "61%";
+	filme_info.imdb = 7.3;
+	filme_info.foto_link = "https://img.elo7.com.br/product/original/25FA5FB/big-poster-filme-alita-anjo-de-combate-lo02-tamanho-90x60-cm-poster-de-filme.jpg";
+	}
+	
+	else if (filmes[i].numero >= 21 && filmes[i].numero <= 30) {
+	
+	filme_info.nome_filme = "Jurassic World";
+	filme_info.rotten = "71%";
+	filme_info.imdb = 6.9;
+	filme_info.foto_link = "http://4.bp.blogspot.com/-v98_sfJ6GYI/VD8dMEzC4WI/AAAAAAAAG5w/wMoz5LwmWHs/s1600/jurassicworld-poster.jpg";
+	}
+	
+	else if (filmes[i].numero >= 31 && filmes[i].numero <= 40) {
+	
+	filme_info.nome_filme= "Capitã Marvel";
+	filme_info.rotten = "79%";
+	filme_info.imdb = 6.8;
+	filme_info.foto_link = "https://m.media-amazon.com/images/M/MV5BMTE0YWFmOTMtYTU2ZS00ZTIxLWE3OTEtYTNiYzBkZjViZThiXkEyXkFqcGdeQXVyODMzMzQ4OTI@._V1_.jpg";
+	}
+	
+	else if (filmes[i].numero >= 41 && filmes[i].numero <= 50) {
+	
+	filme_info.nome_filme = "Liga da Justiça";
+	filme_info.rotten = "71%";
+	filme_info.imdb = 8.0;
+	filme_info.foto_link = "https://m.media-amazon.com/images/I/71jqKaWob3L._AC_SL1500_.jpg";
+	}
+
+    else if (filmes[i].numero >= 51 && filmes[i].numero <= 60) {
+	
+	filme_info.nome_filme = "Pantera Negra";
+	filme_info.rotten = "96%";
+	filme_info.imdb = 7.3;
+	filme_info.foto_link = "http://www.magazine-hd.com/apps/wp/wp-content/uploads/2017/12/Black-Panther-Poster-1.jpg";
+	}
+
+    else if (filmes[i].numero >= 61 && filmes[i].numero <= 70) {
+	
+	filme_info.nome_filme = "O Poderoso Chefão";
+	filme_info.rotten = "97%";
+	filme_info.imdb = 9.2;
+	filme_info.foto_link = "https://i.pinimg.com/originals/14/87/78/14877822d8694bcf8876df7f95c91367.jpg";
+	}
+
+    else if (filmes[i].numero >= 71 && filmes[i].numero <= 80) {
+	
+	filme_info.nome_filme = "1917";
+	filme_info.rotten = "88%";
+	filme_info.imdb = 8.2;
+	filme_info.foto_link = "https://www.themoviedb.org/t/p/original/2Y2HtSq4cZa1kmVLZm1bGokImF7.jpg";
+	}
+
+    else if (filmes[i].numero >= 81 && filmes[i].numero <= 90) {
+	
+	filme_info.nome_filme = "A Lista de Schindler";
+	filme_info.rotten = "98%";
+	filme_info.imdb = 9.0;
+	filme_info.foto_link = "https://upload.wikimedia.org/wikipedia/pt/1/1d/SchindlerPoster.jpg";
+	}
+
+    else if (filmes[i].numero >= 91 && filmes[i].numero <= 100) {
+	
+	filme_info.nome_filme = "2001: Uma Odisseia no Espaço";
+	filme_info.rotten = "92%";
+	filme_info.imdb = 8.3;
+	filme_info.foto_link = "https://i.pinimg.com/736x/a9/ba/d8/a9bad8619648ec008996ea3d9addb26a.jpg";
+	}
+
+    else if (filmes[i].numero >= 101 && filmes[i].numero <= 110) {
+	
+	filme_info.nome_filme = "Inside Llewyn Davis";
+	filme_info.rotten = "92%";
+	filme_info.imdb = 7.4;
+	filme_info.foto_link = "https://m.media-amazon.com/images/M/MV5BMjAxNjcyNDQxM15BMl5BanBnXkFtZTgwNzU2NDA0MDE@._V1_.jpg";
+	}
+
+    else if (filmes[i].numero >= 111 && filmes[i].numero <= 120) {
+	
+	filme_info.nome_filme= "Sangue Negro";
+	filme_info.rotten = "91%";
+	filme_info.imdb = 8.2;
+	filme_info.foto_link = "https://i.pinimg.com/originals/79/05/bb/7905bbe9909d86d855dd968c1d0d625d.jpg";
+	}
+
+    else if (filmes[i].numero >= 121 && filmes[i].numero <= 130) {
+	
+	filme_info.nome_filme = "O Irlandês";
+	filme_info.rotten = "95%";
+	filme_info.imdb = 7.8;
+	filme_info.foto_link = "https://joesdaily.com/wp-content/uploads/2020/01/Tony-Stella-Ian-Keltie-The-Irishman-Posters-6.jpg";
+	}
+
+    else if (filmes[i].numero >= 131 && filmes[i].numero <= 140) {
+	
+	filme_info.nome_filme = "Mad Max: Estrada da Fúria";
+	filme_info.rotten = "97%";
+	filme_info.imdb = 8.1;
+	filme_info.foto_link = "https://m.media-amazon.com/images/M/MV5BN2EwM2I5OWMtMGQyMi00Zjg1LWJkNTctZTdjYTA4OGUwZjMyXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_FMjpg_UX1000_.jpg";
+	}
+
+    else if (filmes[i].numero >= 141 && filmes[i].numero <= 150) {
+	
+	filme_info.nome_filme = "Batman vs Superman";
+	filme_info.rotten = "29%";
+	filme_info.imdb = 6.4;
+	filme_info.foto_link = "https://m.media-amazon.com/images/M/MV5BYThjYzcyYzItNTVjNy00NDk0LTgwMWQtYjMwNmNlNWJhMzMyXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg";
+	}
+
+    else if (filmes[i].numero >= 151 && filmes[i].numero <= 160) {
+	
+	filme_info.nome_filme = "Capitão América: Guerra Civil";
+	filme_info.rotten = "90%";
+	filme_info.imdb = 7.8;
+	filme_info.foto_link = "https://cinevisao.pt/wp-content/uploads/2015/11/Captain_America_Civil_War_poster-oficial.jpg";
+	}
+
+    else if (filmes[i].numero >= 161 && filmes[i].numero <= 170) {
+	
+	filme_info.nome_filme = "Coringa";
+	filme_info.rotten = "68%";
+	filme_info.imdb= 8.4;
+	filme_info.foto_link = "https://img.elo7.com.br/product/original/2A1A4BF/big-poster-filme-joker-coringa-joaquin-phoenix-lo02-90x60-cm-poster.jpg";
+	}
+
+    else if (filmes[i].numero >= 171 && filmes[i].numero <= 180) {
+	
+	filme_info.nome_filme = "Star Wars VII";
+	filme_info.rotten = "93%";
+	filme_info.imdb = 7.8;
+	filme_info.foto_link = "https://www.tenhomaisdiscosqueamigos.com/wp-content/uploads/2015/10/star-wars-the-force-awakens-poster.jpg";
+	}
+
+    else if (filmes[i].numero >= 181 && filmes[i].numero <= 190) {
+	
+	filme_info.nome_filme = "O Esquadrão Suicida";
+	filme_info.rotten = "90%";
+	filme_info.imdb = 7.2;
+	filme_info.foto_link = "https://www.themoviedb.org/t/p/w500/wTS3dS2DJiMFFgqKDz5fxMTri.jpg";
+	}
+
+    else if (filmes[i].numero >= 191 && filmes[i].numero <= 200) {
+	
+	filme_info.nome_filme = "O Estranho Mundo de Jack";
+	filme_info.rotten = "95%";
+	filme_info.imdb = 7.9;
+	filme_info.foto_link = "https://upload.wikimedia.org/wikipedia/pt/c/cd/O_Estranho_Mundo_de_Jack.png";
+	}
+
+    else if (filmes[i].numero >= 201 && filmes[i].numero <= 210) {
+	
+	filme_info.nome_filme = "Batman";
+	filme_info.rotten = "85%";
+	filme_info.imdb = 7.9;
+	filme_info.foto_link = "https://img.elo7.com.br/product/original/3FBBEDD/big-poster-filme-batman-2022-90x60-cm-lo006-poster.jpg";
+	}
+
+    else if (filmes[i].numero >= 211 && filmes[i].numero <= 220) {
+	
+	filme_info.nome_filme = "Pulp Fiction";
+	filme_info.rotten = "92%";
+	filme_info.imdb = 8.9;
+	filme_info.foto_link = "https://m.media-amazon.com/images/I/91qzsEyFlML._AC_SL1500_.jpg";
+	}
+
+    else if (filmes[i].numero >= 221 && filmes[i].numero <= 230) {
+	
+	filme_info.nome_filme = "Vovó...Zona 3: Tal Pai, Tal Filho";
+	filme_info.rotten = "5%";
+	filme_info.imdb = 4.4;
+	filme_info.foto_link = "https://i.pinimg.com/564x/04/a4/a4/04a4a44d7d39fa2888e231f8afb59d65--english-movies-father.jpg";
+	}
+
+    else if (filmes[i].numero >= 231 && filmes[i].numero <= 240) {
+	
+	filme_info.nome_filme = "";
+	filme_info.rotten = "79%";
+	filme_info.imdb = 8.8;
+	filme_info.foto_link = "https://m.media-amazon.com/images/I/71TlZNAe05L._AC_SY679_.jpg";
+	}
+	
+	
+	resultado.innerHTML += `
+	<br><br> 
+    <h4>Filme ${i + 1}: ${filmes[i].numero}</h4>
+	<h4>Titulo: ${filme_info.nome_filme}</h4>
+	<h4>Nota no Rotten Tomatoes: ${filme_info.rotten}</h4>
+	<h4>Nota no IMDb: ${filme_info.imdb}</h4><br>
+	<img src="${filme_info.foto_link}" style="height:300px">`
+	
+	}
+	}
+	</script>
+

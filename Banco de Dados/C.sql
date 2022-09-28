@@ -1,8 +1,3 @@
--- Arquivo de apoio, caso você queira criar tabelas como as aqui criadas para a API funcionar.
--- Você precisa executar os comandos no banco de dados para criar as tabelas,
--- ter este arquivo aqui não significa que a tabela em seu BD estará como abaixo!
-
-/* para workbench - local - desenvolvimento */
 CREATE DATABASE Cineviews;
 
 USE Cineviews;
@@ -42,10 +37,9 @@ INSERT INTO cinema VALUES
 	  (NULL, 'Mad Max'),
 	  (NULL, 'Clube da Luta'),
 	  (NULL, 'O Irlandês');
-
-
-
-	  INSERT INTO usuario VALUES 
+      
+      
+INSERT INTO usuario VALUES 
              (NULL, 'Bruce Wayne', '38828429010', 'brucewayne@gmail.com', 'eusouobatman'),
              (NULL, 'Coringa', '92837462930', 'coringa@gmail.com', 'hahahahaha'),
              (NULL, 'Michael Corleone', '91839293020', 'michaelcorleone@gmail.com', 'padrinho'),
@@ -61,32 +55,3 @@ JOIN votacao
 ON fkCinema = idCinema
 GROUP BY fkCinema
 ORDER BY fkCinema;
-
-
-
-
-/* para sql server - remoto - produção
-
-CREATE TABLE usuario (
-	id INT PRIMARY KEY IDENTITY(1,1),
-	nome VARCHAR(50),
-	email VARCHAR(50),
-	senha VARCHAR(50),
-);
-
-CREATE TABLE aviso (
-	id INT PRIMARY KEY IDENTITY(1,1),
-	titulo VARCHAR(100),
-    descricao VARCHAR(150),
-	fk_usuario INT FOREIGN KEY REFERENCES usuario(id)
-); 
-
-CREATE TABLE medida (
-	id INT PRIMARY KEY IDENTITY(1,1),
-	temperatura DOUBLE,
-	umidade DOUBLE,
-	momento DATETIME,
-	fk_aquario INT
-);
- */
-

@@ -238,6 +238,20 @@ input {
   margin-top: 5px;
 }
 
+.btn2 {
+  font-family: "Barlow", sans-serif;
+  border: 0;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 10px 15px;
+  color: rgb(0, 0, 0);
+  background-color: #ffffff;
+  width: 120px;
+  align-self: center;
+  margin-top: 5px;
+}
+
 .loading-div {
   width: 50px;
   margin: auto;
@@ -317,6 +331,7 @@ input {
 }
 
 .btn-nav-white {
+  text-decoration: none;
   width: 40%;
   background-color: white;
   border: 3px solid #e6005a;
@@ -340,9 +355,9 @@ input {
 .btn-logout {
   margin: 0;
   padding: 0;
-  width: 20%;
-  background-color: #32b9cd;
-  color: white;
+  width: 8%;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
   border-radius: 10px;
   text-align: center;
   padding: 10px 15px;
@@ -417,5 +432,11 @@ input {
 
 .texto_cor {
     color: #fff;
+}
+
+.recomendacao {
+  margin-top: 30px;
+  margin-left: 440px;
+  align-items: center;
 }
 

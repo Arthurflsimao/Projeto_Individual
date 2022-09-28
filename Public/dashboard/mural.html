@@ -26,8 +26,9 @@
 
         <div class="header-left">
 
-
+            <h3><a href="filmes.html">Inicio</a></h3>
             <div class="btn-logout" onclick="limparSessao()">
+               
                 <h3>Sair</h3>
             </div>
 
@@ -115,7 +116,7 @@
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                window.alert("Post realizado com sucesso pelo usuario de ID: " + idUsuario + "!");
+                window.alert("Post realizado com sucesso!" + idUsuario + "!");
                 window.location = "/dashboard/mural.html";
                 limparFormulario();
                 finalizarAguardar();
